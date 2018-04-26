@@ -24,6 +24,10 @@
         <java.version>10</java.version>
         <spring-cloud-gcp.version>1.0.0.M3</spring-cloud-gcp.version>
         <spring-cloud.version>Finchley.M9</spring-cloud.version>
+        <protobuf-maven-plugin.version>0.5.1</protobuf-maven-plugin.version>
+        <protobuf-java.version>3.5.1</protobuf-java.version>
+        <protoc-jar-maven-plugin.version>3.5.1.1</protoc-jar-maven-plugin.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -72,6 +76,11 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                 </plugin>
+                <plugin>
+                    <groupId>org.xolstice.maven.plugins</groupId>
+                    <artifactId>protobuf-maven-plugin</artifactId>
+                    <version>${protobuf-maven-plugin.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -89,6 +98,7 @@
 
     <modules>
         <module>sample-boot-app</module>
+        <module>protocol</module>
     </modules>
 
 </project>

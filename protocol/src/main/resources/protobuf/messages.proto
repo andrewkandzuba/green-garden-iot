@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+// This is the package where the java source code will be placed.
+option java_package = "le.arn";
+
+// This is the name of the class.
+// If not provided, it will be created as <message name>OuterClass.
+option java_outer_classname = "GreetingProtos";
+
+message Greeting {
+  string greeting = 1;
+
+}
