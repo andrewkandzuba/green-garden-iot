@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+option java_package = "io.openxchange.green.garden.protocol";
+option java_outer_classname = "ProtocolFacrory";
+
+message Message {
+    string correlation_id = 1;
+    Device device = 2;
+    oneof payload {
+        Temperature temperature = 10;
+        Humidity humidity = 11;
+        Wind wind = 12;
+    }
+}
+
+message Device {
+    uint64 id = 1;
+    uint64 timestamp = 2;
+    double latitude = 3;
+    double longitude = 4;
+}
+
+message Temperature {
+    enum Scale {
+        FAHRENHEIT = 0;
+        CELSIUS = 1;
+    }
+    sint32 degree = 1;
+    Scale scale = 2;
+}
+
+message Humidity {
+    uint32 pecent = 1;
+}
+
+message Wind {
+    enum Scale {
+        MPH = 0;
+        KMP = 1;
+    }
+    uint32 direction = 1;
+    double speed = 2;
+    Scale scale = 3;
+}
+
