@@ -26,6 +26,7 @@
         <spring-cloud.version>Finchley.M9</spring-cloud.version>
         <protobuf-maven-plugin.version>0.5.1</protobuf-maven-plugin.version>
         <protobuf-java.version>3.5.1</protobuf-java.version>
+        <guava.vesion>21.0</guava.vesion>
         <protoc-jar-maven-plugin.version>3.5.1.1</protoc-jar-maven-plugin.version>
         <junit.version>4.12</junit.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
