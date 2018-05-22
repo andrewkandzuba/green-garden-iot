@@ -16,18 +16,12 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-gcp-starter-pubsub</artifactId>
-            <!--TODO: why do i need to specify version  - dependancy management should take care of this-->
-            <version>1.0.0.M3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.integration</groupId>
@@ -47,48 +41,11 @@
         </dependency>
     </dependencies>
 
-
-
-    <!--TODO: we shouldn't need this section here-->
-
-    <properties>
-        <spring-cloud-gcp.version>1.0.0.M3</spring-cloud-gcp.version>
-        <spring-boot-release.version>2.0.1.RELEASE</spring-boot-release.version>
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-gcp-dependencies</artifactId>
-                <version>${spring-cloud-gcp.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot-release.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-    <!--TODO: end -->
-
     <build>
-        <!--<plugins>-->
-            <!--<plugin>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--</plugin>-->
-        <!--</plugins>-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.5.7.RELEASE</version>
                 <executions>
                     <execution>
                         <goals>
@@ -101,7 +58,7 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>appengine-maven-plugin</artifactId>
-                <version>${appengine.maven.plugin}</version>
+                <version>${appengine.maven.plugin.version}</version>
             </plugin>
             <!-- END plugin -->
         </plugins>
